@@ -301,33 +301,36 @@ def make_key_comments_feed(creator_title, first_recommendation, first_recommenda
         print("오류 발생:", response.status_code, response.text)
         return {"오류 발생 :", response.status_code, response.text}
     
-def make_main_topics() :
+
+# 최다 조회수 영상 정보, 최신 영상 정보 2개, 인기 급상승 영상 정보
+    
+def make_main_topics(popular_video_info, latest_video_infos, hot_video_info, creator_thumbnail, creator_title) :
     param1_todays_hot_video_category = ""
     param2_todays_hot_video_thumbnail = ""
     param3_todays_hot_video_title = ""
     param4_todays_hot_video_view_count = ""
     param5_todays_hot_video_upload_date= ""
     param6_todays_hot_video_like_count = ""
-    param7_popular_video_category = ""
-    param8_popular_video_thumbnail = ""
-    param9_popular_video_title = ""
-    param10_popular_video_view_count = ""
-    param11_popular_video_upload_date = ""
-    param12_popular_video_like_count = ""
-    param13_latest_video1_category = ""
-    param14_latest_video1_thumbanail = ""
-    param15_latest_video1_title = ""
-    param16_latest_video1_view_count =""
-    param17_latest_video1_upload_date =""
-    param18_latest_video1_like_count= ""
-    param19_latest_video2_category =""
-    param20_lateet_video2_thumbnail = ""
-    param21_latest_video2_title = ""
-    param22_latest_video2_view_count = ""
-    param23_latest_video2_upload_date= ""
-    param24_latest_video2_like_count = ""
-    param25_creator_thumbnail = ""
-    param26_creator_title = ""
+    param7_popular_video_category = popular_video_info["category"]
+    param8_popular_video_thumbnail = popular_video_info["thumbnail_url"]
+    param9_popular_video_title = popular_video_info["title"]
+    param10_popular_video_view_count = popular_video_info["view_count"]
+    param11_popular_video_upload_date = popular_video_info["published_at"]
+    param12_popular_video_like_count = popular_video_info["like_count"]
+    param13_latest_video1_category = latest_video_infos[0]["category"]
+    param14_latest_video1_thumbanail = latest_video_infos[0]["thumbnail_url"]
+    param15_latest_video1_title = latest_video_infos[0]["title"]
+    param16_latest_video1_view_count =latest_video_infos[0]["view_count"]
+    param17_latest_video1_upload_date =latest_video_infos[0]["published_at"]
+    param18_latest_video1_like_count= latest_video_infos[0]["like_count"]
+    param19_latest_video2_category =latest_video_infos[1]["category"]
+    param20_lateet_video2_thumbnail =  latest_video_infos[1]["thumbnail_url"]
+    param21_latest_video2_title = latest_video_infos[1]["title"]
+    param22_latest_video2_view_count = latest_video_infos[1]["view_count"]
+    param23_latest_video2_upload_date= latest_video_infos[1]["published_at"]
+    param24_latest_video2_like_count = latest_video_infos[1]["like_count"]
+    param25_creator_thumbnail = creator_thumbnail
+    param26_creator_title = creator_title
     bannerbear_api_key = "bb_pr_e999f30ac6febcf2fbe3b0fd80bc68"
     headers = {
     'Authorization': f'Bearer {bannerbear_api_key}'

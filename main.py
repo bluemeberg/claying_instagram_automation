@@ -16,17 +16,18 @@ print(popular_comments)
 # # print("popular result", popular_video_infos)
 
 for video in latest_video_infos :
-    print(video)
-    tags = video["tags"]
-    title = video["title"]
-    print(tags, title)
-    category = classify_video_category(tags=tags, title=title)
-    print(category)
-    category_without_braces = extract_text_inside_braces(category)
-    print(category_without_braces)
-    video["category"] = category_without_braces
+   print(video)
+   tags = video["tags"]
+   title = video["title"]
+   print(tags, title)
+   category = classify_video_category(tags=tags, title=title)
+   print(category)
+   category_without_braces = extract_text_inside_braces(category)
+   print(category_without_braces)
+   video["category"] = category_without_braces
 
-print(latest_video_infos)
+print(latest_video_infos[0:2])
+print(latest_video_infos[0:2][0])
 # for video in popular_video_infos :
 #     tags = video["tags"]
 #     title = video["title"]
